@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "81028ec8-22de-4942-b118-ca127e957f09",
+		"name": "Luiza World",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3178496"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "authWithClientCredentials",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pedro123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "luiza",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8082/oauth2/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "saveNewProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clientId\": \"5e3fabcd6789123456789019\",\n  \"productId\": \"5e2fbd88db12345678901245\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/wishlists/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wishlists",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeProductFromWishlist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/wishlists/v1/5e3fabcd6789123456789013/5e2fbd88db12345678901241",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wishlists",
+						"v1",
+						"5e3fabcd6789123456789013",
+						"5e2fbd88db12345678901241"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkifExistsProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/wishlists/v1/5e3fabcd6789123456789012/5e2fbd88db12345678901255",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wishlists",
+						"v1",
+						"5e3fabcd6789123456789012",
+						"5e2fbd88db12345678901255"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllPaginated",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clientId\": \"6641504d06f6c80ab71fe6de\",\n  \"page\": \"0\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/wishlists/v1/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wishlists",
+						"v1",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/wishlist-db-test
+        
+mongock:
+  enabled: false

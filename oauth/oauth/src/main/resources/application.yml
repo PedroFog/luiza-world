@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+luiza:
+  auth:
+    provider-uri: "http://localhost:8082"
+    jks: 
+      keypass: 123456
+      storepass: 123456
+      alias: luiza
+      path: keystore/luiza.jks
